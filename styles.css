@@ -340,7 +340,7 @@ html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease, background-color 0.5s ease;
     margin: 0 auto; /* Center the rectangle */
-    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/Perou.jpg") no-repeat center center/cover; /* Replace with your image path */
+    background: url("Perou.jpg") no-repeat center center/cover; /* Replace with your image path */
 }
 
 .dynamic-rectangle-languages:hover {
@@ -403,7 +403,7 @@ html {
     align-items: flex-start; /* Align content to the top */
     flex-direction: column;
     position: relative;
-    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/casacade.jpg") no-repeat center center/cover;
+    background: url("casacade.jpg") no-repeat center center/cover;
     padding: 20px;
     text-align: right; /* Align text to the right */
     transition: opacity 0.5s ease;
@@ -766,7 +766,7 @@ html::-webkit-scrollbar-thumb:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease, background-color 0.5s ease;
     margin: 0 auto; /* Center the rectangle */
-    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/Skills.jpg") no-repeat center center/cover; /* Replace with your image path */
+    background: url("Skills.jpg") no-repeat center center/cover; /* Replace with your image path */
 }
 
 .dynamic-rectangle-skills:hover {
