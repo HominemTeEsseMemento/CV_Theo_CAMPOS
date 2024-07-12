@@ -1,0 +1,885 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    color: #ffffff;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video is behind all other content */
+}
+
+/* Header Section */
+.header-section {
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.header-section h1 {
+    font-size: 4rem; /* Adjust font size to match the example */
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-section p {
+    font-size: 1.5rem; /* Adjust font size to match the example */
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    background: linear-gradient(45deg, #6a5acd, #ff69b4); /* Dégradé de couleur */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-section .social-icons {
+    margin-top: 20px;
+}
+
+.header-section .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #6a5acd, #ff69b4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001; /* Ensure the button is above the menu */
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
+.menu-toggle i {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.menu-toggle i:before,
+.menu-toggle i:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.menu-toggle i:before {
+    top: -6px;
+}
+
+.menu-toggle i:after {
+    bottom: -6px;
+}
+
+.menu-toggle.open i {
+    background: transparent;
+}
+
+.menu-toggle.open i:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.open i:after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    opacity: 0;
+    transform: translateX(-50px);
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.side-menu ul li:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}
+
+.side-menu ul li:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    display: block;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.side-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.side-menu.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-menu.active ul li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.side-menu.active ul li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.side-menu.active ul li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.side-menu.active ul li:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.side-menu.active ul li:nth-child(5) {
+    transition-delay: 0.5s;
+}
+.side-menu.active ul li:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Main Content Section */
+#main-content {
+    background-color: transparent; /* Light gray background */
+    padding-top: 100vh; /* Start below the header section */
+}
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    background-color: transparent ;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+section h2 {
+    color: #ff69b4;
+    border-bottom: 2px solid #ff69b4;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Particle.js Styles */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Styles pour les icônes sociales */
+.header-section .social-icons a {
+    display: inline-block; /* Assure que les transformations fonctionnent */
+    color: transparent; /* Cache la couleur de base du texte */
+    margin: 0 10px;
+    font-size: 2rem; /* Taille de police plus grande */
+    transition: transform 0.3s ease, color 0.3s ease;
+    background: linear-gradient(45deg, #6a5acd, #ff69b4); /* Dégradé de couleur */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-section .social-icons a:hover {
+    transform: scale(1.2) rotate(10deg); /* Animation lors du survol */
+    color: transparent;
+    background: linear-gradient(45deg, #ff69b4, #6a5acd); /* Dégradé de couleur inversé */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ARROW */
+.arrow-container {
+    position: absolute; /* Utilisez position:absolute pour ne pas affecter d'autres éléments */
+    bottom: 20px; /* Ajustez cette valeur pour abaisser les flèches */
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement le conteneur des flèches */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    margin: 5px 0;
+    animation: fadeInOut 1.5s infinite;
+}
+
+.arrow-1 {
+    border-top: 20px solid transparent; 
+    border-bottom: 20px solid;
+    border-bottom-color: transparent;
+    background: linear-gradient(45deg, #ff69b4, #6a5acd); /* Dégradé de couleur */
+    border-image: linear-gradient(45deg, #ff69b4, #6a5acd) 1;
+}
+
+.arrow-2 {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid;
+    border-bottom-color: transparent;
+    background: linear-gradient(45deg, #6a5acd, #ff69b4); /* Dégradé de couleur */
+    border-image: linear-gradient(45deg, #6a5acd, #ff69b4) 1;
+    animation-delay: 0.5s;
+}
+
+.arrow-3 {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid;
+    border-bottom-color: transparent;
+    background: linear-gradient(45deg, #ff69b4, #6a5acd); /* Dégradé de couleur */
+    border-image: linear-gradient(45deg, #ff69b4, #6a5acd) 1;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* RECTANGLE DYNAMIQUE */
+/* Styles for the dynamic rectangle for Languages */
+.dynamic-rectangle-languages {
+    position: relative;
+    width: 100%;
+    max-width: 360px; /* Adjust the maximum width as needed */
+    height: 550px; /* Adjust the height as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    margin: 0 auto; /* Center the rectangle */
+    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/Perou.jpg") no-repeat center center/cover; /* Replace with your image path */
+}
+
+.dynamic-rectangle-languages:hover {
+    transform: scale(1.05);
+}
+
+.dynamic-rectangle-languages .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px; /* Reduced padding to fit more content */
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-languages .default-content {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-languages .hover-content {
+    opacity: 0;
+    display: flex;
+    flex-direction: column; /* Single column */
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: flex-start; /* Align content to the left */
+    background: rgba(0, 0, 0, 0.6); /* Dark blur background for readability */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Same as the container */
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    animation: none; /* Ensure no animation by default */
+}
+
+.dynamic-rectangle-languages:hover .default-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-languages:hover .hover-content {
+    opacity: 1;
+    transition: opacity 0.5s ease 2s; /* Apply a delay for the appearance */
+}
+
+@keyframes fadeInWithDelay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Specific styles for the content */
+.dynamic-rectangle-languages .default-content {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Align content to the top */
+    flex-direction: column;
+    position: relative;
+    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/casacade.jpg") no-repeat center center/cover;
+    padding: 20px;
+    text-align: right; /* Align text to the right */
+    transition: opacity 0.5s ease;
+    border-radius: 10px; /* Match the border radius of the container */
+}
+
+.dynamic-rectangle-languages .title {
+    color: #fff;
+    font-size: 1.8rem; /* Increase font size */
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    margin-bottom: 20px; /* Increase space below the title */
+}
+
+.dynamic-rectangle-languages .hover-content .language-details {
+    position: relative;
+    padding: 10px; /* Reduced padding to fit more content */
+    text-align: left; /* Align text to the left */
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Single column */
+    justify-content: space-around; /* Distribute items evenly */
+    background: transparent; /* Ensure transparency */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    opacity: 0; /* Start with hidden sections */
+    animation: slideIn 1s ease forwards 3s; /* Use animation for slide-in effect with delay */
+    animation-fill-mode: forwards; /* Ensure the animation stays in its final state */
+    width: 100%; /* Make sure it covers the full width */
+    height: 100%; /* Make sure it covers the full height */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dynamic-rectangle-languages .hover-content .language-item {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center;
+    width: 100%; /* Ensure the items take the full width */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.dynamic-rectangle-languages .hover-content .language-item:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.dynamic-rectangle-languages .hover-content .language-item img {
+    width: auto; /* Maintain aspect ratio */
+    height: 50px; /* Adjust the flag height */
+    margin-right: 15px; /* Increase space between the flag and the text */
+    image-rendering: crisp-edges; /* Improve image rendering */
+    image-rendering: -webkit-optimize-contrast; /* Improve image rendering for WebKit */
+}
+
+.dynamic-rectangle-languages .hover-content .language-item h4 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem; /* Increase font size */
+}
+
+.dynamic-rectangle-languages .hover-content .language-item p {
+    margin: 0;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem; /* Increase font size */
+    border-left: none;
+    padding-left: 0;
+}
+
+
+/* BULLE AU DESSUS TELEPHONE ET DE L'EMAIL */
+/* Tooltip container */
+.phone-icon, .email-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-tooltip, .email-tooltip {
+    visibility: hidden;
+    width: 250px; /* Adjust width for readability */
+    background-color: transparent; /* Background color */
+    color: #fff;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    margin-left: -125px; /* Use half of the width to center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Tooltip arrow */
+.phone-tooltip::after, .email-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; /* Match the new background color */
+}
+
+/* Show the tooltip when hovering */
+.phone-icon:hover .phone-tooltip, .email-icon:hover .email-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.1); /* Elegant zoom-in effect */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transitions */
+}
+
+/* Adjust positioning to avoid overlap */
+.phone-tooltip {
+    transform: translateY(-10px);
+}
+
+.email-tooltip {
+    transform: translateY(-60px);
+}
+
+
+/* Education Section */
+#education {
+    background: linear-gradient(135deg, #f4f4f4, #e4e4e4);
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    color: #333;
+    z-index: 1;
+}
+
+#education h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 5px;
+    background: #6a5acd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+#education .card {
+    border: none;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#education .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#education .card-body {
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+#education .card-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    color: #333;
+    position: relative;
+    padding-left: 40px;
+}
+
+#education .card-title i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.75rem;
+    color: #6a5acd;
+}
+
+#education .card-text {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+#education .card:before {
+    content: '';
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(to right, rgba(106, 90, 205, 0.2), rgba(255, 105, 180, 0.2));
+    transform: rotate(45deg);
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+
+#education .card:hover:before {
+    top: -50%;
+    left: -50%;
+    transform: rotate(0deg);
+}
+
+#education .card:nth-child(odd) .card-body {
+    animation: slideInLeft 1s ease;
+}
+
+#education .card:nth-child(even) .card-body {
+    animation: slideInRight 1s ease;
+}
+
+/* Keyframe animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* AOS Animations */
+[data-aos="fade-right"] {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+[data-aos="fade-left"] {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+[data-aos="fade-right"].aos-animate, [data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+/* SCROLLBAR */
+/* Scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 16px; /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b; /* Dark background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #909090; /* Light gray color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 4px solid #2b2b2b; /* Padding inside the thumb */
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0; /* Lighter gray on hover */
+}
+
+/* Scrollbar buttons */
+::-webkit-scrollbar-button:single-button {
+    background-color: #2b2b2b;
+    display: block;
+    height: 16px; /* Same as scrollbar width */
+    width: 16px;
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+    background-color: #3c3c3c;
+}
+
+/* Up button */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%23c0c0c0" d="M24 17.573l-12-11.573-12 11.573 2.298 2.427 9.702-9.428 9.702 9.428z"/></svg>');
+}
+
+/* Down button */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%23c0c0c0" d="M0 6.427l12 11.573 12-11.573-2.298-2.427-9.702 9.428-9.702-9.428z"/></svg>');
+}
+
+/* Scrollbar styles for Firefox */
+html {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #909090 #2b2b2b; /* Thumb and track color */
+}
+
+html::-webkit-scrollbar-track-piece {
+    background-color: #2b2b2b;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    border-radius: 10px;
+    border: 4px solid #2b2b2b;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+
+/* Styles for the dynamic rectangle for Skills */
+.dynamic-rectangle-skills {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Full width */
+    height: 360px; /* Adjust the height as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    margin: 0 auto; /* Center the rectangle */
+    background: url("L:/T.CAMPOS/GitHub/CV/CV V2/Skills.jpg") no-repeat center center/cover; /* Replace with your image path */
+}
+
+.dynamic-rectangle-skills:hover {
+    transform: scale(1.05);
+}
+
+.dynamic-rectangle-skills .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Transparent background overlay */
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+.dynamic-rectangle-skills:hover .background-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dynamic-rectangle-skills .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px; /* Adjust padding */
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-skills .default-content {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-skills .hover-content {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Dark blur background for readability */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+.dynamic-rectangle-skills:hover .default-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dynamic-rectangle-skills:hover .hover-content {
+    opacity: 1;
+    transition: opacity 0.5s ease 0.3s; /* Apply a delay for the appearance */
+}
+
+.dynamic-rectangle-skills .circle-logo {
+    width: 100px;
+    height: 100px;
+    background: rgb(58, 156, 58); /* Green background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.dynamic-rectangle-skills .circle-text {
+    color: #043513;
+    font-size: 1.5rem;
+    font-family: 'Lobster', cursive;
+}
+
+.dynamic-rectangle-skills:hover .circle-logo {
+    transform: translate(-50%, -150%); /* Move the logo upwards */
+}
+
+.dynamic-rectangle-skills .title {
+    color: #01380c;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Skills details */
+.skills-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.skills-details .skill-item {
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
